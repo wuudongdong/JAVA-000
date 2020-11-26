@@ -21,7 +21,6 @@ CREATE TABLE product_info(
   PRIMARY KEY pk_productid(product_id)
 ) ENGINE = innodb COMMENT '商品信息表';
 
-
 CREATE TABLE order_master(
   order_id INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '订单ID',
   order_sn BIGINT UNSIGNED NOT NULL COMMENT '订单编号 yyyymmddnnnnnnnn',
