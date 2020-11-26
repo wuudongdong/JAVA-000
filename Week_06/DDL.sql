@@ -16,7 +16,7 @@ CREATE TABLE product_info(
   product_core CHAR(16) NOT NULL COMMENT '商品编码',
   product_name VARCHAR(20) NOT NULL COMMENT '商品名称',
   price DECIMAL(8,2) NOT NULL COMMENT '商品销售价格',
-  descript TEXT NOT NULL COMMENT '商品描述',
+  description TEXT NOT NULL COMMENT '商品描述',
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY pk_productid(product_id)
 ) ENGINE = innodb COMMENT '商品信息表';
@@ -46,3 +46,14 @@ CREATE TABLE order_master(
   modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
   PRIMARY KEY pk_orderid(order_id)
 )ENGINE = innodb COMMENT '订单主表';
+
+CREATE TABLE order_detail(
+  order_detail_id INT UNSIGNED NOT NULL AUTO_INCREMENT COMMENT '订单详情表ID',
+  order_id INT UNSIGNED NOT NULL COMMENT '订单表ID',
+  product_id INT UNSIGNED NOT NULL COMMENT '订单商品ID',
+  product_name VARCHAR(50) NOT NULL COMMENT '商品名称',
+  product_cnt INT NOT NULL DEFAULT 1 COMMENT '购买商品数量',
+  product_price DECIMAL(8,2) NOT NULL COMMENT '购买商品单价',
+  modified_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '最后修改时间',
+  PRIMARY KEY pk_orderdetailid(order_detail_id)
+)ENGINE = innodb COMMENT '订单详情表'
