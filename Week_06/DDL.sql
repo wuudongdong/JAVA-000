@@ -3,7 +3,7 @@ CREATE TABLE customer_info(
   customer_name VARCHAR(20) NOT NULL COMMENT '用户真实姓名',
   identity_card_type TINYINT NOT NULL DEFAULT 1 COMMENT '证件类型：1 身份证，2 军官证，3 护照',
   identity_card_no VARCHAR(20) COMMENT '证件号码',
-  mobile_phone INT UNSIGNED COMMENT '手机号',
+  mobile_phone BIGINT UNSIGNED COMMENT '手机号',
   customer_email VARCHAR(50) COMMENT '邮箱',
   gender CHAR(1) COMMENT '性别',
   register_time TIMESTAMP NOT NULL COMMENT '注册时间',

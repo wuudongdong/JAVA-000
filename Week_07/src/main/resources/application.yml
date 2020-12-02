@@ -1,0 +1,15 @@
+datasource:
+  master:
+    url: jdbc:mysql://localhost:3306/db?characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+  slave:
+    url: jdbc:mysql://localhost:3316/db?characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+mybatis:
+  type-aliases-package: com.github.wuudongdong.week07.entity
+  mapper-locations: classpath:/mapper/*Mapper.xml
+logging:
+  level:
+    com.github.wuudongdong.week07: debug

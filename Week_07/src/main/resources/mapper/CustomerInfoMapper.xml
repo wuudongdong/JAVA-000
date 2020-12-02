@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.github.wuudongdong.week07.mapper.CustomerInfoMapper">
+    <resultMap type="com.github.wuudongdong.week07.entity.CustomerInfo" id="BaseResultMap">
+        <result property="customerInfoId" column="customer_info_id" jdbcType="INTEGER"/>
+        <result property="customerName" column="customer_name" jdbcType="VARCHAR"/>
+        <result property="identityCardType" column="identity_card_type" jdbcType="INTEGER"/>
+        <result property="identityCardNo" column="identity_card_no" jdbcType="VARCHAR"/>
+        <result property="mobilePhone" column="mobile_phone" jdbcType="INTEGER"/>
+        <result property="customerEmail" column="customer_email" jdbcType="VARCHAR"/>
+        <result property="gender" column="gender" jdbcType="VARCHAR"/>
+        <result property="registerTime" column="register_time" jdbcType="TIMESTAMP"/>
+        <result property="modifiedTime" column="modified_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+    customer_info_id, customer_name, identity_card_type, identity_card_no, mobile_phone, customer_email, gender, register_time, modified_time    
+    </sql>
+
+    <!--查询单个-->
+    <select id="getById" resultMap="BaseResultMap">
+        select
+          <include refid="Base_Column_List"/>
+        from customer_info
+        where customer_info_id = #{0}
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="customerInfoId" useGeneratedKeys="true">
+        insert into customer_info(customer_name, identity_card_type, identity_card_no, mobile_phone, customer_email, gender, register_time, modified_time)
+        values (#{customerName}, #{identityCardType}, #{identityCardNo}, #{mobilePhone}, #{customerEmail}, #{gender}, #{registerTime}, #{modifiedTime})
+    </insert>
+</mapper>
