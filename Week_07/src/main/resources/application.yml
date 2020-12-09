@@ -13,3 +13,10 @@ mybatis:
 logging:
   level:
     com.github.wuudongdong.week07: debug
+soul:
+  http:
+    adminUrl: http://localhost:9095
+    port: 8080
+    contextPath: /http
+    appName: http
+    full: false

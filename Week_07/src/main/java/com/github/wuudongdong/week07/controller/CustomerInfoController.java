@@ -3,6 +3,7 @@ package com.github.wuudongdong.week07.controller;
 import com.github.wuudongdong.week07.entity.CustomerInfo;
 import com.github.wuudongdong.week07.pojo.CustomerVO;
 import com.github.wuudongdong.week07.service.CustomerInfoService;
+import org.dromara.soul.client.springmvc.annotation.SoulSpringMvcClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -27,5 +28,11 @@ public class CustomerInfoController {
     @GetMapping("customer/{id}")
     public CustomerInfo queryCustomer(@PathVariable("id") Long id){
         return customerInfoService.queryCustomer(id);
+    }
+
+    @GetMapping("hello")
+    @SoulSpringMvcClient(path = "/hello")
+    public String hello(){
+        return "success";
     }
 }
