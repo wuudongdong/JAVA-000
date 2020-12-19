@@ -8,7 +8,7 @@
 1. 极简订单表建表语句
 
 ```sql
-CREATE TABLE order_master (order_id bigint, customer_id bigint) ENGINE = innodb;
+CREATE TABLE order_master (order_id BIGINT, customer_id BIGINT, payment_money DECIMAL(8,2)) ENGINE = innodb;
 ```
 
 2. 修改proxy的server.yaml配置文件
@@ -114,5 +114,13 @@ notice：<br>
 需要将mysql的驱动配置到proxy的扩展包ext-lib下
 
 5. 使用mysql连接proxy建表
+
+使用Navicat连接sharing-proxy需要自己配置下数据库
+
+6. 使用原生jdbc连接sharing-proxy对数据库进行简单增删改查
+
+#### 作业二 （必做）基于 hmily TCC 或 ShardingSphere 的 Atomikos XA 实现一个简单的分布式事务应用 demo（二选一）
+
+
 
 
