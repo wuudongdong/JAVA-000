@@ -99,3 +99,4 @@ public class InventoryServiceImpl implements InventoryService {
     }
 }
 ```
+作业链接：[redis-demo](https://github.com/wuudongdong/redis-demo)
