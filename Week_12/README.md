@@ -20,6 +20,8 @@ Redis Cluster配置注意事项：
 
 docker command：<br>
 replica: docker run --name redis-slave -v /your dir/redis.conf:/etc/redis/redis.conf -p 6380:6380 -d redis:latest redis-server /etc/redis/redis.conf<br>
+
 sentinel: docker run --name redis-sentinel -v /your dir/sentinel.conf:/etc/redis/sentinel.conf -p 26379:26379 -d redis:latest redis-sentinel /etc/redis/sentinel.conf<br>
+
 cluster: docker run --name redis-cluster-7000 -v /your dir/redis-7000.conf:/etc/redis/redis.conf -p 7000:7000 -d redis:latest redis-server /etc/redis/redis.conf
 
