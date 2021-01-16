@@ -1,5 +1,5 @@
 ## 学习笔记
----
+
 - 1、（必做）搭建ActiveMQ服务，基于JMS，写代码分别实现对于queue和topic的消息的生产和消费，代码提交到github
 思路：
 基于SpringBoot集成ActiveMQ，需要引入如下依赖：
